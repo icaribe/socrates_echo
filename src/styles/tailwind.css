@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #8B4513; /* sienna brown */
+    --color-primary-foreground: #FDF6E3; /* warm cream */
+    
+    /* Secondary Colors */
+    --color-secondary: #2F4F4F; /* deep slate gray */
+    --color-secondary-foreground: #F5F5DC; /* soft beige */
+    
+    /* Accent Colors */
+    --color-accent: #DAA520; /* rich goldenrod */
+    --color-accent-foreground: #2C1810; /* deep brown */
+    
+    /* Background Colors */
+    --color-background: #FDF6E3; /* warm cream */
+    --color-surface: #F5F5DC; /* soft beige */
+    
+    /* Text Colors */
+    --color-text-primary: #2C1810; /* deep brown */
+    --color-text-secondary: #5D4E37; /* medium brown */
+    
+    /* Status Colors */
+    --color-success: #228B22; /* forest green */
+    --color-success-foreground: #FDF6E3; /* warm cream */
+    --color-warning: #FF8C00; /* warm orange */
+    --color-warning-foreground: #2C1810; /* deep brown */
+    --color-error: #B22222; /* deep red */
+    --color-error-foreground: #FDF6E3; /* warm cream */
+    
+    /* Border Colors */
+    --color-border: #E6D7C3; /* muted tone */
+    --color-border-muted: #F0E6D2; /* lighter muted tone */
+    
+    /* Shadow Colors */
+    --shadow-color: rgba(44, 24, 16, 0.1); /* deep brown with opacity */
+    --shadow-color-elevated: rgba(44, 24, 16, 0.15); /* deep brown with higher opacity */
+    
+    /* Typography */
+    --font-heading: 'Crimson Text', serif;
+    --font-body: 'Source Sans Pro', sans-serif;
+    --font-caption: 'Libre Baskerville', serif;
+    --font-data: 'JetBrains Mono', monospace;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-text-primary font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .shadow-soft {
+    box-shadow: 0 2px 8px var(--shadow-color);
+  }
+  
+  .shadow-elevated {
+    box-shadow: 0 4px 16px var(--shadow-color-elevated);
+  }
+  
+  .transition-smooth {
+    transition: all 200ms ease-out;
+  }
+  
+  .transition-modal {
+    transition: all 300ms ease-in-out;
+  }
+  
+  .spring-animation {
+    transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
